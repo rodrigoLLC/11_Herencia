@@ -80,6 +80,37 @@ void Automovil::bajarPasajeros(int bajan){
 	}
 }
 
+//Clase Derivada Camion
+
+class Camion:public Vehiculo{
+	private:
+		float carga;
+		
+	public:
+		Camion();
+		void mostrarCamion();
+		float cambiarCarga(float nuevaCarga);
+};
+	
+Camion::Camion():Vehiculo(){
+	carga = 20;
+}
+
+void Camion::mostrarCamion(){
+	mostrarDatos();
+	cout << "Carga: " << carga << "Kg\n";
+}
+
+float Camion::cambiarCarga(float nuevaCarga){
+	if(nuevaCarga>0){
+		carga = nuevaCarga;
+		return carga;
+	}else{
+		cout << "Nueva carga no Valida...\n";
+	}
+}
+
+
 int main (){
 	float nuevaVelocidad;
 	int suben;
@@ -115,6 +146,8 @@ int main (){
 	
 	a.mostrarAutomovil();
 	cin.ignore();
+	
+	
 	
 	return 0;
 }
